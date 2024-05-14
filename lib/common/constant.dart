@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Constants{
   static Color homeBackground = const Color(0x4DA41A1A);
+  static Color dropDown = const Color(0x4D6C0407);
   static Color border = const Color(0x4DF8F8F8);
   static Color textColor = Colors.white;
 
