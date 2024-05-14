@@ -14,4 +14,6 @@ class Constants{
       textStyle: TextStyle(color: Colors.black, letterSpacing: 3));
   static var myNewFontWhite = GoogleFonts.pressStart2p(
       textStyle: TextStyle(color: Colors.white, letterSpacing: 3));
+  static var display = GoogleFonts.aboreto(
+      textStyle: TextStyle(color: Colors.white, letterSpacing: 3));
 }

@@ -67,18 +67,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           Padding(
                             padding: const EdgeInsets.only(
                                 top: 30.0,
-                                left: 25.0,
-                                right: 25.0,
-                                bottom: 30.0),
+                                left: 20.0,
+                                right: 20.0,
+                                bottom: 28.0),
                             child: Column(
                               children: [
                                 Text('Player X',
-                                    style: Constants.myNewFontWhite),
+                                    style: Constants.myNewFontWhite.copyWith(fontSize: 15)),
                                 const SizedBox(
                                   height: 20,
                                 ),
                                 Text(xhScore.toString(),
-                                    style: Constants.myNewFontWhite),
+                                    style: Constants.myNewFontWhite.copyWith(fontSize: 18)),
                               ],
                             ),
                           ),
@@ -86,18 +86,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           Padding(
                             padding: const EdgeInsets.only(
                                 top: 30.0,
-                                left: 25.0,
-                                right: 25.0,
-                                bottom: 30.0),
+                                left: 20.0,
+                                right: 20.0,
+                                bottom: 28.0),
                             child: Column(
                               children: [
                                 Text('Player O',
-                                    style: Constants.myNewFontWhite),
+                                    style: Constants.myNewFontWhite.copyWith(fontSize: 15)),
                                 const SizedBox(
                                   height: 20,
                                 ),
                                 Text(ohScore.toString(),
-                                    style: Constants.myNewFontWhite),
+                                    style: Constants.myNewFontWhite.copyWith(fontSize: 18)),
                               ],
                             ),
                           ),
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Center(
                           child: Text(
                             displayExOh[index],
-                            style: TextStyle(color: Colors.white, fontSize: 40),
+                            style: Constants.display.copyWith(fontSize: 50),
                           ),
                         ),
                       ),
