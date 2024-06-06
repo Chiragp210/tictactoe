@@ -34,13 +34,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 30.0,left: 30,right: 30),
+                        padding: const EdgeInsets.only(
+                            top: 30.0, left: 30, right: 30),
                         child: DropdownButtonFormField<int>(
                           decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                borderSide: BorderSide.none
-                              )),
+                                  borderSide: BorderSide.none)),
                           dropdownColor: Constants.homeBackground,
                           value: totalGames,
                           items: [1, 3, 5, 7].map((int value) {
@@ -73,12 +73,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Column(
                               children: [
                                 Text('Player X',
-                                    style: Constants.myNewFontWhite.copyWith(fontSize: 15)),
+                                    style: Constants.myNewFontWhite
+                                        .copyWith(fontSize: 15)),
                                 const SizedBox(
                                   height: 20,
                                 ),
                                 Text(xhScore.toString(),
-                                    style: Constants.myNewFontWhite.copyWith(fontSize: 18)),
+                                    style: Constants.myNewFontWhite
+                                        .copyWith(fontSize: 18)),
                               ],
                             ),
                           ),
@@ -92,12 +94,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: Column(
                               children: [
                                 Text('Player O',
-                                    style: Constants.myNewFontWhite.copyWith(fontSize: 15)),
+                                    style: Constants.myNewFontWhite
+                                        .copyWith(fontSize: 15)),
                                 const SizedBox(
                                   height: 20,
                                 ),
                                 Text(ohScore.toString(),
-                                    style: Constants.myNewFontWhite.copyWith(fontSize: 18)),
+                                    style: Constants.myNewFontWhite
+                                        .copyWith(fontSize: 18)),
                               ],
                             ),
                           ),
