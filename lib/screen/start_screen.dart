@@ -19,16 +19,16 @@ class StartScreen extends StatelessWidget {
           Expanded(
               child: Padding(
             padding: EdgeInsets.only(
-                top: screenHeight * 0.07),
+                top: screenHeight * 0.1),
             child: Text(
               'TIC TAC TOE',
-              style: Constants.myNewFontWhite.copyWith(fontSize: 30),
+              style: Constants.myNewFontWhite.copyWith(fontSize: 25),
             ),
           )),
           Expanded(
             flex: 2,
             child: Container(
-              padding: EdgeInsets.only(left: screenWidth * 0.04),
+              padding: EdgeInsets.only(left: screenWidth * 0.02),
               alignment: Alignment.center,
               child: CircleAvatar(
                 backgroundColor: Colors.grey[900],
@@ -43,7 +43,7 @@ class StartScreen extends StatelessWidget {
           ),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.only(left: screenWidth * 0.05),
+            padding: EdgeInsets.only(left: screenWidth * 0.04),
             child: Text(
               'Chirag Panchal',
               style: Constants.myNewFontWhite.copyWith(fontSize: 20),
