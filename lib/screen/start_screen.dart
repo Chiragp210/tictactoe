@@ -19,7 +19,7 @@ class StartScreen extends StatelessWidget {
           Expanded(
               child: Padding(
             padding: EdgeInsets.only(
-                top: screenHeight * 0.1, left: screenWidth * 0.05),
+                top: screenHeight * 0.07),
             child: Text(
               'TIC TAC TOE',
               style: Constants.myNewFontWhite.copyWith(fontSize: 30),
@@ -28,7 +28,7 @@ class StartScreen extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
-              padding: EdgeInsets.only(left: screenWidth * 0.05),
+              padding: EdgeInsets.only(left: screenWidth * 0.04),
               alignment: Alignment.center,
               child: CircleAvatar(
                 backgroundColor: Colors.grey[900],
@@ -51,7 +51,7 @@ class StartScreen extends StatelessWidget {
           )),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 30),
+              padding: EdgeInsets.only(left: screenWidth * 0.05),
               child: GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(
@@ -63,7 +63,7 @@ class StartScreen extends StatelessWidget {
                   padding: EdgeInsets.only(
                       left: screenWidth * 0.1,
                       right: screenWidth * 0.1,
-                      bottom: screenHeight * 0.05),
+                      bottom: screenHeight * 0.12),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Container(

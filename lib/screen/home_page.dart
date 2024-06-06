@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: Scaffold(
         backgroundColor: Constants.homeBackground,
         body: Padding(
-          padding: EdgeInsets.all(screenWidth * 0.05),
+          padding: EdgeInsets.all(screenWidth * 0.02),
           child: Column(
             children: [
               Expanded(
@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           });
                         },
                       ),
-                    SizedBox(height: screenHeight * 0.05),
+                    SizedBox(height: screenHeight * 0.01),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
