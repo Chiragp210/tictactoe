@@ -8,68 +8,79 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
         child: Scaffold(
-          backgroundColor: Constants.homeBackground,
-          body: Column(
-            children: [
-              Expanded(child: Padding(
-                padding: const EdgeInsets.only(top: 108.0,left: 30),
-                child: Container(child: Text('TIC TAC TOE',style: Constants.myNewFontWhite.copyWith(fontSize: 30),)),
-              )),
-              Expanded(flex: 2,child: Container(
-                padding: EdgeInsets.only(left: 20),
-                child:
-              AvatarGlow(
-                glowColor: Colors.white,
-                duration: Duration(seconds: 2),
-                repeat: true,
-                child: Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      style: BorderStyle.none
-                    )
-                  ),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.grey[900],
-                    child: Container(
-                      child: Image.asset('assets/images/back.png',
-                      color: Colors.white,
-                      fit: BoxFit.scaleDown,
-                      ),
-                    ),
-                    radius: 80.0,
-                  ),
+      backgroundColor: Constants.homeBackground,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Expanded(
+              child: Padding(
+            padding: EdgeInsets.only(
+                top: screenHeight * 0.1, left: screenWidth * 0.05),
+            child: Text(
+              'TIC TAC TOE',
+              style: Constants.myNewFontWhite.copyWith(fontSize: 30),
+            ),
+          )),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.only(left: screenWidth * 0.05),
+              alignment: Alignment.center,
+              child: CircleAvatar(
+                backgroundColor: Colors.grey[900],
+                radius: screenHeight * 0.1,
+                child: Image.asset(
+                  'assets/images/back.png',
+                  color: Colors.white,
+                  fit: BoxFit.scaleDown,
                 ),
-              ),)),
-              Expanded(child: Padding(
-                padding: const EdgeInsets.only(top: 108.0,left: 30),
-                child: Container(child: Text('Chirag Panchal',style: Constants.myNewFontWhite.copyWith(fontSize: 20),)),
-              )),
-              Padding(
-                padding: const EdgeInsets.only(left: 30),
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const MyHomePage()));
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 40,right: 40,bottom: 60),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        padding: EdgeInsets.all(30),
-                        color: Colors.white,
-                        child: Text('PLAY GAME',style: Constants.myNewFont,),
-
-                      ),
-                    ),
-                  ),
-                ),
-              )
-
-            ],
+              ),
+            ),
           ),
-        )
-    );
+          Expanded(
+              child: Padding(
+            padding: EdgeInsets.only(left: screenWidth * 0.05),
+            child: Text(
+              'Chirag Panchal',
+              style: Constants.myNewFontWhite.copyWith(fontSize: 20),
+            ),
+          )),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MyHomePage()));
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: screenWidth * 0.1,
+                      right: screenWidth * 0.1,
+                      bottom: screenHeight * 0.05),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      padding: EdgeInsets.all(screenWidth * 0.05),
+                      color: Colors.white,
+                      child: Text(
+                        'PLAY GAME',
+                        style: Constants.myNewFont,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+    ));
   }
 }

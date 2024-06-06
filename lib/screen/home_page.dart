@@ -22,93 +22,74 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Constants.homeBackground,
         body: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: EdgeInsets.all(screenWidth * 0.05),
           child: Column(
             children: [
               Expanded(
-                child: Container(
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 30.0, left: 30, right: 30),
-                        child: DropdownButtonFormField<int>(
-                          decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide.none)),
-                          dropdownColor: Constants.homeBackground,
-                          value: totalGames,
-                          items: [1, 3, 5, 7].map((int value) {
-                            return DropdownMenuItem<int>(
-                              value: value,
-                              child: Text('$value Games',
-                                  style: Constants.myNewFontWhite),
-                            );
-                          }).toList(),
-                          onChanged: (value) {
-                            setState(() {
-                              totalGames = value!;
-                              currentGame = 1;
-                              ohScore = 0;
-                              xhScore = 0;
-                              _clearBoard();
-                            });
-                          },
+                child: Column(
+                  children: [
+                    SizedBox(height: screenHeight * 0.05),
+                     DropdownButtonFormField<int>(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                borderSide: BorderSide.none)),
+                        dropdownColor: Constants.homeBackground,
+                        value: totalGames,
+                        items: [1, 3, 5, 7].map((int value) {
+                          return DropdownMenuItem<int>(
+                            value: value,
+                            child: Text('$value Games',
+                                style: Constants.myNewFontWhite),
+                          );
+                        }).toList(),
+                        onChanged: (value) {
+                          setState(() {
+                            totalGames = value!;
+                            currentGame = 1;
+                            ohScore = 0;
+                            xhScore = 0;
+                            _clearBoard();
+                          });
+                        },
+                      ),
+                    SizedBox(height: screenHeight * 0.05),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Text('Player X',
+                                style: Constants.myNewFontWhite
+                                    .copyWith(fontSize: 15)),
+                            SizedBox(height: screenHeight * 0.02),
+                            Text(xhScore.toString(),
+                                style: Constants.myNewFontWhite
+                                    .copyWith(fontSize: 18)),
+                          ],
                         ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 30.0,
-                                left: 20.0,
-                                right: 20.0,
-                                bottom: 28.0),
-                            child: Column(
-                              children: [
-                                Text('Player X',
-                                    style: Constants.myNewFontWhite
-                                        .copyWith(fontSize: 15)),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Text(xhScore.toString(),
-                                    style: Constants.myNewFontWhite
-                                        .copyWith(fontSize: 18)),
-                              ],
-                            ),
+                        SizedBox(width: screenWidth * 0.1),
+                        Column(
+                            children: [
+                              Text('Player O',
+                                  style: Constants.myNewFontWhite
+                                      .copyWith(fontSize: 15)),
+                              SizedBox(height: screenHeight * 0.02),
+                              Text(ohScore.toString(),
+                                  style: Constants.myNewFontWhite
+                                      .copyWith(fontSize: 18)),
+                            ],
                           ),
-                          const SizedBox(width: 20),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 30.0,
-                                left: 20.0,
-                                right: 20.0,
-                                bottom: 28.0),
-                            child: Column(
-                              children: [
-                                Text('Player O',
-                                    style: Constants.myNewFontWhite
-                                        .copyWith(fontSize: 15)),
-                                const SizedBox(
-                                  height: 20,
-                                ),
-                                Text(ohScore.toString(),
-                                    style: Constants.myNewFontWhite
-                                        .copyWith(fontSize: 18)),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
               Expanded(
@@ -116,7 +97,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: GridView.builder(
                   itemCount: 9,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3),
+                    crossAxisCount: 3,
+                    crossAxisSpacing: screenWidth * 0.02,
+                    mainAxisSpacing: screenHeight * 0.02,
+                  ),
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () {
@@ -128,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Center(
                           child: Text(
                             displayExOh[index],
-                            style: Constants.display.copyWith(fontSize: 50),
+                            style: Constants.display.copyWith(fontSize: screenHeight * 0.08),
                           ),
                         ),
                       ),
